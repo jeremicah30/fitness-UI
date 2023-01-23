@@ -1,0 +1,8 @@
+//global
+@import "../styles/globals.scss", "../styles/variable.module.scss";
+
+//components
+@import "../styles/components/Layout.module.scss",
+  "../styles/components/Navbar.module.scss",
+  "../styles/components/Banner.modules.scss",
+  "../styles/components/Exercises.module.scss";
