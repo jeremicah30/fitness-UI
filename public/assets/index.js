@@ -4,3 +4,7 @@ export { default as Grid3 } from "../assets/grid03.png";
 export { default as Grid4 } from "../assets/grid04.png";
 export { default as Grid5 } from "../assets/grid05.png";
 export { default as Grid6 } from "../assets/grid06.png";
+export { default as Yellow } from "../assets/yellow.svg";
+export { default as Show1 } from "../assets/girl-concentrate.png";
+export { default as Show2 } from "../assets/girl-hand.png";
+// export { default as Grid5 } from "../assets/grid05.png";

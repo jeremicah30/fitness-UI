@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <header className="nav-main p-5">
+    <header className="nav-main p-10">
       <div className="container">
         <nav className="navbar flex items-center">
           <div className="navbar--logo w-50">

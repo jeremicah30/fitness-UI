@@ -11,10 +11,9 @@ const Exercises = () => {
           <h2>Popular Exercises</h2>
           <p>SEE MORE EXERCISES</p>
         </div>
-        <div className="exercises--grid grid grid-rows-2 grid-cols-3 gap-x-3 gap-y-10 place-content-center">
+        <div className="exercises--grid text-white grid grid-rows-2 grid-cols-3 gap-x-3 gap-y-10 justify-items-center">
           <div className="grid">
             <Image className="image" src={Grid1} alt="Girl in Treadmill" />
-
             <h3>Treadmill</h3>
             <p>250 est calories </p>
           </div>
