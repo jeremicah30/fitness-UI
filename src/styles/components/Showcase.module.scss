@@ -1,5 +1,6 @@
 .showcase {
-  .angry-grid {
+  padding: 100px 0;
+  &--left {
     display: grid;
 
     grid-template-rows: 1fr 1fr;
@@ -19,4 +20,36 @@
   #item-1 {
     grid-area: label1;
   }
+
+  &--right {
+    .boy-stretch {
+      margin-top: -200px;
+    }
+  }
 }
+
+@media only screen and (max-width: 768px) {
+  .showcase {
+    padding: 50px 0;
+
+    .responsive {
+      max-width: 100%;
+    }
+    &--right {
+      .boy-stretch {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// @media only screen and (max-width: 768px) {
+//   .showcase {
+//     padding: 50px 0;
+//     &--right {
+//       .boy-stretch {
+//         margin: 0;
+//       }
+//     }
+//   }
+// }

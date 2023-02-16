@@ -1,12 +1,12 @@
 .banner {
-  height: 85vh;
+  padding: 20px 0;
   width: 100%;
 
   &--left {
     width: 830px;
 
-    .offer {
-      width: 370px;
+    .offer-b {
+      max-width: 370px;
       height: 36px;
       border-radius: 200px;
       margin-bottom: 29px;
@@ -29,7 +29,7 @@
     h1 {
       font-family: $main-font;
       font-weight: 600;
-      font-size: 12.5rem;
+      font-size: 12rem;
       line-height: 170px;
     }
 
@@ -51,6 +51,20 @@
         font-size: 1.13rem;
         line-height: 22px;
         letter-spacing: 1px;
+
+        &-1 {
+          &:hover {
+            background-color: white;
+            color: #25ab75;
+          }
+        }
+
+        &-2 {
+          &:hover {
+            background-color: white;
+            color: #1b1a1b;
+          }
+        }
       }
     }
   }
@@ -103,6 +117,98 @@
           line-height: 20px;
         }
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner {
+    padding: 50px 0;
+    &--left {
+      h1 {
+        font-size: 11rem;
+        line-height: 150px;
+      }
+    }
+
+    &--right {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .banner {
+    &--left {
+      h1 {
+        font-size: 4rem;
+        line-height: 60px;
+        padding: 0 10px;
+      }
+
+      p {
+        padding: 15px;
+      }
+
+      &-btn {
+        margin-top: 20px;
+        .banner-btn {
+          width: 125px;
+          height: 55px;
+          font-size: 15px;
+          line-height: 22px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .offer-b {
+        p {
+          font-size: 10px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+
+    &--right {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .banner {
+    &--left {
+      h1 {
+        font-size: 4rem;
+        line-height: 60px;
+        padding: 0 10px;
+      }
+
+      p {
+        padding: 15px;
+      }
+
+      &-btn {
+        margin-top: 20px;
+        .banner-btn {
+          width: 125px;
+          height: 55px;
+          font-size: 15px;
+          line-height: 22px;
+          letter-spacing: 1px;
+        }
+      }
+
+      .offer-b {
+        p {
+          font-size: 10px;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+
+    &--right {
+      display: none;
     }
   }
 }

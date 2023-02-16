@@ -40,8 +40,11 @@
       }
 
       .image {
-        width: 430px;
-        height: 280px;
+        transition: transform 0.2s ease-in;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
   }

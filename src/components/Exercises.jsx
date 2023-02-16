@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import { Grid1, Grid2, Grid3, Grid4, Grid5, Grid6 } from "../../public/assets";
 
@@ -9,9 +10,14 @@ const Exercises = () => {
       <div className="container">
         <div className="exercises--title text-white flex justify-between items-center">
           <h2>Popular Exercises</h2>
-          <p>SEE MORE EXERCISES</p>
+          <Link
+            href="https://www.healthline.com/health/fitness-exercise/10-best-exercises-everyday#start-here"
+            className="underline"
+          >
+            SEE MORE EXERCISES
+          </Link>
         </div>
-        <div className="exercises--grid text-white grid grid-rows-2 grid-cols-3 gap-x-3 gap-y-10 justify-items-center">
+        <div className="exercises--grid text-white grid grid-rows-2 desktop:grid-cols-3 laptop:grid-cols-3 tablet:grid-cols-2 gap-x-3 gap-y-10 justify-items-center ">
           <div className="grid">
             <Image className="image" src={Grid1} alt="Girl in Treadmill" />
             <h3>Treadmill</h3>

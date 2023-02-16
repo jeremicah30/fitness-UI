@@ -7,4 +7,5 @@ export { default as Grid6 } from "../assets/grid06.png";
 export { default as Yellow } from "../assets/yellow.svg";
 export { default as Show1 } from "../assets/girl-concentrate.png";
 export { default as Show2 } from "../assets/girl-hand.png";
-// export { default as Grid5 } from "../assets/grid05.png";
+export { default as Boy } from "../assets/boy-stretch.png";
+export { default as Exercise } from "../assets/exercise.png";

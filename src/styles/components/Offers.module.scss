@@ -10,7 +10,7 @@
 
   &--title {
     font-weight: 600;
-    font-size: 7.5rem;
+    font-size: clamp(5rem, 2.2264rem + 4.4339vw, 7.5rem);
     line-height: 120px;
     letter-spacing: -2px;
     padding: 0 50px;
@@ -21,7 +21,7 @@
     font-size: 1.6rem;
     line-height: 50px;
     letter-spacing: 0.5px;
-    padding: 0 150px;
+    width: 400px;
 
     .offers-btn {
       color: $main-text-color;
@@ -31,6 +31,91 @@
       font-size: 1.13rem;
       line-height: 22px;
       letter-spacing: 1px;
+    }
+  }
+}
+
+//Responsive
+@media only screen and (max-width: 1024px) {
+  .offers {
+    padding: 10px 40px;
+    .tablet {
+      display: block;
+    }
+    &--title {
+      width: 100%;
+      line-height: 90px;
+      letter-spacing: -1px;
+      padding: 0;
+    }
+
+    p {
+      padding-bottom: 10px;
+    }
+
+    .offers-btn {
+      width: 160px;
+      height: 55px;
+      font-size: 1rem;
+      line-height: 22px;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .offers {
+    .responsive {
+      padding: 0;
+      max-width: 100%;
+    }
+
+    &--title {
+      h2 {
+        font-size: 5.5rem;
+        line-height: 90px;
+        letter-spacing: -1px;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+    &--content {
+      width: 100%;
+
+      p {
+        font-size: 16px;
+        line-height: 40px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .offers {
+    .responsive {
+      padding: 0;
+    }
+
+    &--title {
+      h2 {
+        font-size: 3rem;
+        line-height: 60px;
+        letter-spacing: -1px;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+    &--content {
+      width: 100%;
+
+      p {
+        font-size: 16px;
+        line-height: 40px;
+      }
     }
   }
 }

@@ -1,3 +1,15 @@
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+@mixin pc-layout {
+  @media screen and (min-width: 751px) {
+    @content;
+  }
+}
+
 .nav-main {
   background-color: $main-bg-color;
 
@@ -19,6 +31,200 @@
       font-weight: 400;
       font-size: 0.75rem;
       letter-spacing: 1.5px;
+    }
+  }
+}
+
+//Responsive
+
+@media only screen and (max-width: 1600px) {
+  .navbar {
+    &--links-mobile {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    &--links {
+      display: none;
+    }
+  }
+
+  .navbar--links-mobile {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    z-index: 999;
+
+    #burger-toggle {
+      position: absolute;
+      appearance: none;
+      opacity: 0;
+
+      &:checked {
+        & ~ .menu {
+          opacity: 1;
+          visibility: visible;
+
+          .menu-nav-link span div,
+          img,
+          .title p {
+            transform: translateY(0);
+            transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+          }
+
+          .image-link {
+            @for $i from 1 through 4 {
+              &:nth-child(#{$i}) img {
+                transition-delay: 0.1s + 0.08s * $i;
+              }
+            }
+          }
+        }
+
+        & ~ .burger-menu {
+          .line {
+            &::after {
+              transform: translateX(0);
+            }
+
+            &:nth-child(1) {
+              transform: translateY(calc(($burger-menu-radius) / 5))
+                rotate(45deg);
+            }
+
+            &:nth-child(2) {
+              transform: scaleX(0);
+            }
+
+            &:nth-child(3) {
+              transform: translateY(calc(($burger-menu-radius) / -5))
+                rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+
+    .burger-menu {
+      $burger-menu-radius: 4em;
+      position: relative;
+      z-index: 100;
+      display: block;
+      width: ($burger-menu-radius);
+      height: ($burger-menu-radius);
+      outline: none;
+      cursor: pointer;
+
+      .line {
+        position: absolute;
+        left: 25%;
+        width: 50%;
+        height: 3px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: 0.5s;
+
+        &:nth-child(1) {
+          top: 30%;
+        }
+
+        &:nth-child(2) {
+          top: 50%;
+        }
+
+        &:nth-child(3) {
+          top: 70%;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: var(--primary-color-darker);
+          transform: translateX(-100%);
+          transition: 0.25s;
+        }
+
+        @for $i from 2 through 3 {
+          &:nth-child(#{$i})::after {
+            transition-delay: 0.1s * ($i - 1);
+          }
+        }
+      }
+
+      &:hover {
+        .line::after {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+      opacity: 0;
+      overflow-x: hidden;
+      visibility: hidden;
+      transition: 0.3s;
+
+      &-nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        list-style-type: none;
+
+        @include sp-layout {
+          flex-direction: column;
+        }
+
+        &-item {
+          flex: 1;
+          padding: 20px 0;
+        }
+
+        &-link {
+          position: relative;
+          display: inline-flex;
+          font-size: 2rem;
+          color: white;
+          text-decoration: none;
+
+          &::after {
+            position: absolute;
+            content: "";
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: green;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s;
+          }
+
+          &:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+        }
+      }
     }
   }
 }
